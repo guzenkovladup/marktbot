@@ -29,11 +29,7 @@ class Product:
 PRODUCTS: List[Product] = [
     Product(id="p1", name="Тут мог быть твой товар 1", price=10, desc="Описание товара 1"),
     Product(id="p2", name="Тут мог быть твой товар 2", price=25, desc="Описание товара 2"),
-    Product(id="p3", name="Тут мог быть твой товар 3", price=40, desc="Описание товара 3"),
-    Product(id="p3", name="Тут мог быть твой товар 4", price=50, desc="Описание товара 4"),
-    Product(id="p3", name="Тут мог быть твой товар 5", price=65, desc="Описание товара 5"),
-    Product(id="p3", name="Тут мог быть твой товар 6", price=70, desc="Описание товара 6"),
-    Product(id="p3", name="Тут мог быть твой товар 7", price=100, desc="Описание товара 7"),
+    Product(id="p3", name="Тут мог быть твой товар 3", price=40, desc="Описание товара 3"), 
 ]
 
 # Корзина в памяти: user_id -> {product_id: qty}
@@ -217,5 +213,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 
 
