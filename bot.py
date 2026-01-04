@@ -51,7 +51,7 @@ def main_menu_kb():
 def catalog_kb():
     kb = InlineKeyboardBuilder()
     for p in PRODUCTS:
-        kb.button(text=f"{p.name} — {p.price}VladiCoin", callback_data=f"product:{p.id}")
+        kb.button(text=f"{p.name} — {p.price}$", callback_data=f"product:{p.id}")
     kb.button(text="⬅️ Назад", callback_data="back:menu")
     kb.adjust(1)
     return kb.as_markup()
@@ -125,7 +125,7 @@ async def show_product(call: CallbackQuery):
     if not p:
         await call.answer("Товар не найден", show_alert=True)
         return
-    text = f"📦 {p.name}\n💶 Цена: {p.price}VladiCoin\n\n📝 {p.desc}"
+    text = f"📦 {p.name}\n💶 Цена: {p.price}$\n\n📝 {p.desc}"
     await call.message.edit_text(text, reply_markup=product_kb(pid))
     await call.answer()
 
@@ -218,8 +218,4 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 
-python
 
-@dp.message(F.photo)
-async def get_photo_id(message):
-    await message.answer(message.photo[-1].file_id)
